@@ -1,0 +1,47 @@
+body{
+    background-color: papayawhip;
+}
+#wrapper
+{
+    margin: 5%;
+    background-color: palegoldenrod;
+
+}
+header
+{
+    display: grid;
+    grid-template-columns: 10% 88%;
+    grid-column-gap: 2%;
+    background-color: darkgoldenrod;
+}
+#header-icon img
+{
+    width:80px;
+    height:100%;
+}
+#header-name
+{
+    display: inline;
+}
+#main-grid{
+    margin: 10px;
+    display: grid;
+    /*grid-template-columns: 45% 45%;*/
+    /*grid-auto-columns: 45%;*/
+    grid-template-columns: repeat(3,20%);
+    grid-row-gap: 3em;
+    grid-column-gap: 20%;
+
+}
+.menu-item
+{
+    text-align: center;
+}
+.menu-item a{
+    text-decoration: none;
+    color: black;
+}
+.menu-tile-img
+{
+    width:100%;
+}
