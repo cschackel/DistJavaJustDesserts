@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipes</title>
+    <link rel="stylesheet" href="SharedStyles.css">
+    <link rel="stylesheet" href="Recipe.css">
+    <script src="program.js"></script>
+</head>
+<body>
+<div id="wrapper">
+    <header>
+        <div id="header-icon"><img src="Cookie.png"></div>
+        <div id="header-name"> <h1>Just Desserts</h1></div>
+        <div id="header-nav">
+            <a href="Cookies.html"><div class="nav-item">Cookies</div></a>
+            <div class="nav-item">Pies</div>
+            <div class="nav-item">Cakes</div>
+            <div class="nav-item">Donuts</div>
+        </div>
+    </header>
+    <button type="button" id="new-recipe-button">Add A New Recipe</button>
+    <div id="new-recipe-area" class="hidden">
+        <form class="new-recipe-box">
+            <label for="new-recipe-title">Recipe Title:</label>
+            <input type="text" required id="new-recipe-title">
+            <label>Ingredients:</label>
+            <div id="ingredient-area">
+                <input type="text" required class="new-recipe-ingredients">
+            </div>
+
+            <button type="button" id="new-ingredient-button">Add Ingredient</button>
+            <label for="new-recipe-directions">Directions:</label>
+            <textarea id="new-recipe-directions" required maxlength="1000" minlength="10"></textarea>
+        </form>
+        <button type="button" id="new-recipe-submit">Submit</button>
+    </div>
+    <div id="recipe-content">
+        <div class="recipe-box">
+            <h2 class="recipe-title">Recipe Title</h2>
+            <div class="recipe-ingredients">
+                <ul>
+                    <li>Butter</li>
+                    <li>Eggs</li>
+                    <li>Sugar</li>
+                    <li>Flour</li>
+                </ul>
+            </div>
+            <div class="recipe-instructions">
+                Add Contents into Bowl<br>Stir<br>Bake
+
+            </div>
+        </div>
+    </div>
+    <footer>
+        <small>&copy Cyrus Schackel 2019</small>
+    </footer>
+</div>
+<script src="recipes.js"></script>
+</body>
+</html>

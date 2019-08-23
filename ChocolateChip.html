@@ -12,6 +12,12 @@
     <header>
         <div id="header-icon"><img src="Cookie.png"></div>
         <div id="header-name"> <h1>Just Desserts</h1></div>
+        <div id="header-nav">
+            <a href="Cookies.html"><div class="nav-item">Cookies</div></a>
+            <div class="nav-item">Pies</div>
+            <div class="nav-item">Cakes</div>
+            <div class="nav-item">Donuts</div>
+        </div>
     </header>
     <div class="item-grid">
         <div class="item-grid-img-main"><img src="Cookie.png"></div>
@@ -20,8 +26,23 @@
         <div class="item-grid-rating"><h2 class="item-grid-field-header">Rating: 4.2 Stars</h2></div>
         <div class="item-grid-desc"><h2 class="item-grid-field-header">Description:</h2><p>A cookie with Chocolate Chips</p></div>
         <div class="item-grid-comments-section">
+            <h2 class="item-grid-field-header">Comments:</h2>
+            <div class="item-grid-comments-box">
+                <form id="new-comment-form-box"class="hidden">
+                    <div id="new-comment-form">
+                    <label for="new-comment-user">Username:</label>
+                    <input type="text" id="new-comment-user" required>
+                    <label for="new-comment-user">Post Title:</label>
+                    <input type="text" id="new-comment-title" required>
+                    <label for="new-comment-body">Comment:</label>
+                    <textarea id="new-comment-body" minlength="5" maxlength="500" > </textarea>
+                    </div>
+                    <button>Post comment</button>
+                </form>
+
+                <button type="button" id="new-comment-btn">Add Comment</button>
+            </div>
             <div class="item-grid-comments">
-                <h2 class="item-grid-field-header">Comments:</h2>
                 <div class="item-grid-comments-comment">
                         <h4>User: Jim - I Don't Like Them:</h4>
                         <div>They are Gross</div>
@@ -32,10 +53,14 @@
                 </div>
             </div>
         </div>
+        <div class="item-grid-recipe">
+            <a href="ChocoChipRecipes.html"><button>See Recipes</button></a>
+        </div>
     </div>
     <footer>
         <small>&copy Cyrus Schackel 2019</small>
     </footer>
 </div>
+<script src="ItemDesc.js"></script>
 </body>
 </html>

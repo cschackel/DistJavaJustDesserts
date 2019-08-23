@@ -45,3 +45,21 @@ header
 {
     width:100%;
 }
+#header-nav
+{
+    display: grid;
+    grid-column: span 2;
+    width:100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 1em;
+}
+.nav-item
+{
+    height:2em;
+    width:100%;
+    background-color: floralwhite;
+    text-align: center;
+    border: black 2px solid;
+    text-decoration: none;
+    color:black;
+}
