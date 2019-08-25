@@ -13,6 +13,8 @@ header
     grid-template-columns: 10% 88%;
     grid-column-gap: 2%;
     background-color: darkgoldenrod;
+    text-decoration: none;
+    color: #000;
 }
 #header-icon img
 {
@@ -22,6 +24,8 @@ header
 #header-name
 {
     display: inline;
+    color: #000;
+    text-decoration: none;
 }
 #main-grid{
     margin: 10px;
@@ -62,4 +66,10 @@ header
     border: black 2px solid;
     text-decoration: none;
     color:black;
+}
+h1
+{
+    color: #000;
+    text-decoration: none;
+    text-underline: none;
 }

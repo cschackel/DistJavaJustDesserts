@@ -12,6 +12,11 @@ var newIngredButton = document.getElementById("new-ingredient-button");
 newIngredButton.addEventListener("click",function()
 {
     let ingredientList=document.getElementById("ingredient-area");
-    ingredientList.innerHTML+="<input type=\"text\" required class=\"new-recipe-ingredients\">";
+    //ingredientList.innerHTML+="<input type=\"text\" required class=\"new-recipe-ingredients\">";
+    let input = document.createElement("input");
+    input.type = "text";
+    input.setAttribute("required","true");
+    input.setAttribute("class","new-recipe-ingredients")
+    ingredientList.appendChild(input);
 });
 
