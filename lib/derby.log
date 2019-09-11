@@ -1,0 +1,76 @@
+Wed Sep 11 14:46:55 CDT 2019 Thread[main,5,main] Cleanup action starting
+java.sql.SQLException: Database 'dbdemo' not found.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:115)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:141)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Util.java:225)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Util.java:220)
+	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(EmbedConnection.java:3215)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleDBNotFound(EmbedConnection.java:772)
+	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(EmbedConnection.java:442)
+	at org.apache.derby.iapi.jdbc.InternalDriver$1.run(InternalDriver.java:660)
+	at org.apache.derby.iapi.jdbc.InternalDriver$1.run(InternalDriver.java:656)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:552)
+	at org.apache.derby.iapi.jdbc.InternalDriver.getNewEmbedConnection(InternalDriver.java:654)
+	at org.apache.derby.iapi.jdbc.InternalDriver.connect(InternalDriver.java:300)
+	at org.apache.derby.iapi.jdbc.InternalDriver.connect(InternalDriver.java:967)
+	at org.apache.derby.iapi.jdbc.AutoloadedDriver.connect(AutoloadedDriver.java:136)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
+	at org.apache.derby.impl.tools.ij.ij.dynamicConnection(ij.java:1495)
+	at org.apache.derby.impl.tools.ij.ij.ConnectStatement(ij.java:1325)
+	at org.apache.derby.impl.tools.ij.ij.ijStatement(ij.java:1106)
+	at org.apache.derby.impl.tools.ij.utilMain.runScriptGuts(utilMain.java:353)
+	at org.apache.derby.impl.tools.ij.utilMain.go(utilMain.java:251)
+	at org.apache.derby.impl.tools.ij.Main.go(Main.java:229)
+	at org.apache.derby.impl.tools.ij.Main.mainCore(Main.java:184)
+	at org.apache.derby.impl.tools.ij.Main.main(Main.java:75)
+	at org.apache.derby.tools.ij.main(ij.java:59)
+Caused by: ERROR XJ004: Database 'dbdemo' not found.
+	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:300)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(SQLExceptionFactory.java:170)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:75)
+	... 24 more
+============= begin nested exception, level (1) ===========
+ERROR XJ004: Database 'dbdemo' not found.
+	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:300)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(SQLExceptionFactory.java:170)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:75)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:141)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Util.java:225)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Util.java:220)
+	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(EmbedConnection.java:3215)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleDBNotFound(EmbedConnection.java:772)
+	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(EmbedConnection.java:442)
+	at org.apache.derby.iapi.jdbc.InternalDriver$1.run(InternalDriver.java:660)
+	at org.apache.derby.iapi.jdbc.InternalDriver$1.run(InternalDriver.java:656)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:552)
+	at org.apache.derby.iapi.jdbc.InternalDriver.getNewEmbedConnection(InternalDriver.java:654)
+	at org.apache.derby.iapi.jdbc.InternalDriver.connect(InternalDriver.java:300)
+	at org.apache.derby.iapi.jdbc.InternalDriver.connect(InternalDriver.java:967)
+	at org.apache.derby.iapi.jdbc.AutoloadedDriver.connect(AutoloadedDriver.java:136)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
+	at org.apache.derby.impl.tools.ij.ij.dynamicConnection(ij.java:1495)
+	at org.apache.derby.impl.tools.ij.ij.ConnectStatement(ij.java:1325)
+	at org.apache.derby.impl.tools.ij.ij.ijStatement(ij.java:1106)
+	at org.apache.derby.impl.tools.ij.utilMain.runScriptGuts(utilMain.java:353)
+	at org.apache.derby.impl.tools.ij.utilMain.go(utilMain.java:251)
+	at org.apache.derby.impl.tools.ij.Main.go(Main.java:229)
+	at org.apache.derby.impl.tools.ij.Main.mainCore(Main.java:184)
+	at org.apache.derby.impl.tools.ij.Main.main(Main.java:75)
+	at org.apache.derby.tools.ij.main(ij.java:59)
+============= end nested exception, level (1) ===========
+Cleanup action completed
+----------------------------------------------------------------
+Wed Sep 11 14:47:14 CDT 2019:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.1.3 - (1853019): instance a816c00e-016d-21dd-503e-0000074584e8 
+on database directory C:\Users\thecy\IdeaProjects\JustDeserts2\lib\JustDessert with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@c387f44 
+Loaded from file:/C:/Apache/db-derby-10.15.1.3-bin/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=12.0.2+10
+user.dir=C:\Users\thecy\IdeaProjects\JustDeserts2\lib
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
