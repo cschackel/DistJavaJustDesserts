@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipes</title>
+    <link rel="stylesheet" href="SharedStyles.css">
+    <link rel="stylesheet" href="Recipe.css">
+    <script src="program.js"></script>
+</head>
+<body>
+<div id="wrapper">
+    <header>
+        <div id="header-icon"><a href="index.html"><img src="Cookie.png"></a></div>
+        <div id="header-name"><a href="index.html"><h1>Just Desserts</h1></a></div>
+        <div id="header-nav">
+            <a href="Cookies.html"><div class="nav-item">Cookies</div></a>
+            <div class="nav-item">Pies</div>
+            <div class="nav-item">Cakes</div>
+            <div class="nav-item">Donuts</div>
+        </div>
+    </header>
+    <button type="button" id="new-recipe-button">Add A New Recipe</button>
+    <div id="new-recipe-area" class="hidden">
+        <form class="new-recipe-box">
+            <label for="new-recipe-title">Recipe Title:</label>
+            <input type="text" required id="new-recipe-title">
+            <label>Ingredients:</label>
+            <div id="ingredient-area">
+                <input type="text" required class="new-recipe-ingredients">
+            </div>
+
+            <button type="button" id="new-ingredient-button">Add Ingredient</button>
+            <label for="new-recipe-directions">Directions:</label>
+            <textarea id="new-recipe-directions" required maxlength="1000" minlength="10"></textarea>
+            <button type="submit" id="new-recipe-submit">Submit</button>
+        </form>
+    </div>
+    <div id="recipe-content">
+        <div class="recipe-box">
+            <h2 class="recipe-title">Recipe Title</h2>
+            <div class="recipe-ingredients">
+                <ul>
+                    <li> 1/2 cup (113g) unsalted butter, melted</li>
+                    <li> 1/3 cup (66 g) granulated sugar</li>
+                    <li> 1/2 cup (104g) packed light brown sugar</li>
+                    <li> 1 large egg</li>
+                    <li>1 teaspoon (5ml) vanilla extract</li>
+                    <li>1/2 teaspoon baking soda</li>
+                    <li>1/2 teaspoon salt</li>
+                    <li> 1 1/2 cups (186g) all-purpose flour</li>
+                    <li>1 1/2 cups (255g) chocolate chips (semi-sweet or milk)</li>
+                </ul>
+            </div>
+            <div class="recipe-instructions">
+                Note: This dough requires chilling.<br><br>
+                Place melted butter in the bowl of a stand mixer fitted with the paddle attachment (or a large bowl if
+                using a hand mixer). Add granulated and brown sugars and mix on low speed until the mixture is smooth.
+                Mix in egg and vanilla extract and mix on medium speed until combined.<br><br>
+                Mix in baking soda and salt, then slowly mix in flour and mix just until the batter is smooth and comes
+                together. Be sure to scrape the sides of the bowl during mixing. Slowly mix in chocolate chips.<br><br>
+                Line a cookie sheet with a silicone baking mat or parchment paper. Scoop 2 tablespoon balls of dough
+                onto the cookie sheet. Spacing doesn’t matter because you will be chilling the dough. Cover with plastic
+                wrap and chill for at least 2 hours.<br><br>
+                Preheat oven to 350°F. Line a second cookie sheet with parchment paper or a silicone baking mat.<br><br>
+                Remove the chilled cookie dough balls from the refrigerator and space them 2-inches apart on the cookie
+                sheets. Bake (2 tablespoon sized cookies) for 11-15 minutes, or until the edges are a light golden and
+                the tops are no longer glossy. Let cool on the cookie sheets at least 10 minutes before removing.<br><br>
+
+            </div>
+        </div>
+    </div>
+    <footer>
+        <small>&copy Cyrus Schackel 2019</small>
+    </footer>
+</div>
+<script src="recipes.js"></script>
+</body>
+</html>

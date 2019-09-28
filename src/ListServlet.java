@@ -23,6 +23,7 @@ public class ListServlet extends HttpServlet {
         try
         {
             Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
+
             String path = getServletContext().getRealPath(DatabaseUtils.DATABASE_PATH);
 
 
