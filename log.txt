@@ -4,3 +4,27 @@ Info: Category Name set to "Cakes"
 Info: Info Alert
 Warning: Warning Alert
 Error: Error Alert
+Info: Created a new category
+Info: Category ID set to 1
+Info: Category Name set to "Cakes"
+Info: Info Alert
+Warning: Warning Alert
+Error: Error Alert
+Info: Created a new category
+Info: Category ID set to 1
+Info: Category Name set to "Cakes"
+Info: Info Alert
+Warning: Warning Alert
+Error: Error Alert
+Info: Created a new category
+Info: Category ID set to 1
+Info: Category Name set to "Cakes"
+Info: Info Alert
+Warning: Warning Alert
+Error: Error Alert
+Info: Created a new category
+Info: Category ID set to 1
+Info: Category Name set to "Cakes"
+Info: Info Alert
+Warning: Warning Alert
+Error: Error Alert
