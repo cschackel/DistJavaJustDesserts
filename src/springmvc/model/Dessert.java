@@ -1,10 +1,6 @@
-package springxml.beans;
+package springmvc.model;
 
-import springxml.services.LoggerService;
-
-import java.io.Serializable;
-
-public class Desssert implements Serializable {
+public class Dessert {
     private int dessertID;
     private int categoryID;
     private String dessertName;

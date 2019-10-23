@@ -19,6 +19,8 @@
           <element id="file-copy" path="$PROJECT_DIR$/lib/taglibs-standard-impl-1.2.5.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/lib/taglibs-standard-jstlel-1.2.5.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/lib/taglibs-standard-spec-1.2.5.jar" />
+          <element id="library" level="project" name="jstl:jstl:1.2" />
+          <element id="library" level="project" name="org.hibernate.validator:hibernate-validator:6.0.17.Final" />
         </element>
       </element>
     </root>

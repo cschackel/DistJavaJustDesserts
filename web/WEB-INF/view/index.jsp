@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Just Desserts</title>
+    <title>Just Desserts()</title>
     <link rel="stylesheet" href="<spring:url value="/resources/css/SharedStyles.css"/>">
     <script src="<spring:url value="/resources/js/program"/>"></script>
 </head>
@@ -13,7 +13,7 @@
         <div id="header-icon"><a href="/"><img src="<spring:url value="/resources/img/Cookie.png"/>"></a></div>
         <div id="header-name"><a href="/"><h1>Just Desserts</h1></a></div>
         <div id="header-nav">
-            <a href="Cookies.html"><div class="nav-item">Cookies</div></a>
+            <a href="displayCategory/1"><div class="nav-item">Cookies</div></a>
             <div class="nav-item">Pies</div>
             <div class="nav-item">Cakes</div>
             <div class="nav-item">Donuts</div>
@@ -21,7 +21,7 @@
     </header>
     <div id="main-grid">
         <div class="menu-item">
-            <a href="Cookies.html">
+            <a href="displayCategory/1">
                 <img class="menu-tile-img" src="<spring:url value="/resources/img/Cookie.png"/>">
                 <p>Cookies</p>
             </a>
