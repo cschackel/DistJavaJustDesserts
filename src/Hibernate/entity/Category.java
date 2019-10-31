@@ -3,18 +3,18 @@ package Hibernate.entity;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
+@Entity(name = "Categories")
 public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "categories")
+    @Column(name = "categoryid")
     private int categoryID;
     @Column(name = "categoryname")
     private String categoryName;
     @Column(name = "imagename")
     private String imageName;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "dessertid")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
     //@JoinColumn(name = "dessertid")
     private List<Dessert> dessertList;
 

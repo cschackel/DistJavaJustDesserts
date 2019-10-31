@@ -2,7 +2,7 @@ package Hibernate.entity;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "recipes")
 public class Recipe {
 
     @Id

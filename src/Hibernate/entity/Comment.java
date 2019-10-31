@@ -2,7 +2,7 @@ package Hibernate.entity;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "comments")
 public class Comment {
 
     @Id

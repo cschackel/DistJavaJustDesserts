@@ -3,7 +3,7 @@ package Hibernate.entity;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
+@Entity(name = "desserts")
 public class Dessert {
 
     @Id
@@ -18,7 +18,7 @@ public class Dessert {
             CascadeType.PERSIST,
             CascadeType.REFRESH
     })
-    @Column(name = "categoryid")
+    @JoinColumn(name = "categoryid")
     private Category category;
     @Column(name = "description")
     private String description;
@@ -29,20 +29,12 @@ public class Dessert {
     @Column(name = "imagename")
     private String imageName;
 
-    @ManyToOne(fetch = FetchType.LAZY,cascade = {
-            CascadeType.DETACH,
-            CascadeType.MERGE,
-            CascadeType.PERSIST,
-            CascadeType.REFRESH
-    })
-    //@JoinColumn(name = "categoryid")
-    //private List<Category> categoryList;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "recipeid")
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "dessert")
     //@JoinColumn(name = "recipeid")
     private List<Recipe> recipeList;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "commentid")
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "dessert")
     //@JoinColumn(name = "commentid")
     private List<Comment> commentList;
 
