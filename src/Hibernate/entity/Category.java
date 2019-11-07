@@ -1,6 +1,7 @@
 package Hibernate.entity;
 
 import javax.persistence.*;
+import java.util.LinkedList;
 import java.util.List;
 
 @Entity(name = "Categories")
@@ -14,6 +15,8 @@ public class Category {
     private String categoryName;
     @Column(name = "imagename")
     private String imageName;
+    //ALL Because if Category Is Deleted, all Desserts of that Category should be deleted
+    //Default Lazy Loading OK because it is efficient and it is not always necessary to know desserts
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
     //@JoinColumn(name = "dessertid")
     private List<Dessert> dessertList;
@@ -59,6 +62,15 @@ public class Category {
 
     public void setDessertList(List<Dessert> dessertList) {
         this.dessertList = dessertList;
+    }
+
+    public void addDessert(Dessert newDessert)
+    {
+        if(dessertList==null)
+        {
+            dessertList = new LinkedList<>();
+        }
+        dessertList.add(newDessert);
     }
 
     @Override

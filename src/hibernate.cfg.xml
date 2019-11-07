@@ -8,7 +8,8 @@
 
         <!-- JDBC Database connection settings -->
         <property name="connection.driver_class">org.apache.derby.jdbc.EmbeddedDriver</property>
-        <property name="connection.url">jdbc:derby:C:/Users/thecy/Desktop/WCTC/2019-2020/DistJava/JD/lib/JustDessert</property>
+        <!--<property name="connection.url">jdbc:derby:C:/Users/thecy/Desktop/WCTC/2019-2020/DistJava/JD/lib/JustDessert</property>-->
+        <property name="connection.url">jdbc:derby:lib/JustDessert</property>
         <property name="connection.username">cschackel</property>
         <property name="connection.password">cschackel</property>
 

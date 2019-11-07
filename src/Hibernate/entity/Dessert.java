@@ -1,6 +1,7 @@
 package Hibernate.entity;
 
 import javax.persistence.*;
+import java.util.LinkedList;
 import java.util.List;
 
 @Entity(name = "desserts")
@@ -12,6 +13,8 @@ public class Dessert {
     private int dessertID;
     @Column(name = "dessertname")
     private String dessertName;
+    //Cascade Does Not include Delete Because If a dessert is removed, the category should remain
+    //Eager OK because it allows Dessert to access Category Data and it is not a large amount of data
     @ManyToOne(fetch = FetchType.EAGER,cascade = {
             CascadeType.DETACH,
             CascadeType.MERGE,
@@ -30,10 +33,14 @@ public class Dessert {
     private String imageName;
 
 
+    //ALL Because if Dessert Is Deleted, all Recipes of that Dessert should be deleted
+    //Default Lazy Loading OK because it is efficient and it is not always necessary to know recipes
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "dessert")
     //@JoinColumn(name = "recipeid")
     private List<Recipe> recipeList;
 
+    //ALL Because if Dessert Is Deleted, all Comments of that Dessert should be deleted
+    //Default Lazy Loading OK because it is efficient and it is not always necessary to know comments
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "dessert")
     //@JoinColumn(name = "commentid")
     private List<Comment> commentList;
@@ -52,6 +59,14 @@ public class Dessert {
         this.imageName = imageName;
         this.recipeList = recipeList;
         this.commentList = commentList;
+    }
+
+    public Dessert(String dessertName, String description, double rating, String discerningFeatures, String imageName) {
+        this.dessertName = dessertName;
+        this.description = description;
+        this.rating = rating;
+        this.discerningFeatures = discerningFeatures;
+        this.imageName = imageName;
     }
 
     public int getDessertID() {
@@ -126,15 +141,33 @@ public class Dessert {
         this.commentList = commentList;
     }
 
+    public void addComment(Comment newComment)
+    {
+        if(commentList==null)
+        {
+            commentList = new LinkedList<>();
+        }
+        commentList.add(newComment);
+    }
+
+    public void addRecipe(Recipe newRecipe)
+    {
+        if(recipeList==null)
+        {
+            recipeList = new LinkedList<>();
+        }
+        recipeList.add(newRecipe);
+    }
+
     @Override
     public String toString()
     {
         String output;
         output = "Dessert:{\nDessertID: "+getDessertID() +
-                "\ncategoryID: "+getCategory().getCategoryID()+
+                "\nCategoryID: "+getCategory().getCategoryID()+
                 "\nName: "+getDessertName()+
                 "\nDescription: "+getDescription()+
-                "\n Discerning Features: "+getDiscerningFeatures()+
+                "\nDiscerning Features: "+getDiscerningFeatures()+
                 "\nRating: "+getRating()+
                 "\nImage Name: "+getImageName()+
                 "\n}";

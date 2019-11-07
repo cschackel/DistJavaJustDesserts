@@ -9,6 +9,8 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "commentid")
      private int commentID;
+    //Cascade Does Not include Delete Because If a Comment is removed, the Dessert should remain
+    //Eager OK because it allows Comment to access Dessert Data and it is not a large amount of data
     @ManyToOne(fetch = FetchType.LAZY,cascade = {
             CascadeType.DETACH,
             CascadeType.MERGE,
@@ -35,6 +37,12 @@ public class Comment {
 
     public Comment(Dessert dessert, String postedBy, String title, String body) {
         this.dessert = dessert;
+        this.postedBy = postedBy;
+        this.title = title;
+        this.body = body;
+    }
+
+    public Comment(String postedBy, String title, String body) {
         this.postedBy = postedBy;
         this.title = title;
         this.body = body;
@@ -88,7 +96,7 @@ public class Comment {
                 "\nDessertID: "+getDessert().getDessertID()+
                 "\nTitle: "+getTitle()+
                 "\nBody: "+getBody()+
-                "\n PostedBy: "+getPostedBy()+
+                "\nPostedBy: "+getPostedBy()+
                 "\n}";
         return output;
     }

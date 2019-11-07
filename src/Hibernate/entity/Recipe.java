@@ -9,6 +9,8 @@ public class Recipe {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "recipeid")
     private int recipeID;
+    //Cascade Does Not include Delete Because If a Recipe is removed, the Dessert should remain
+    //Eager OK because it allows Recipe to access Dessert Data and it is not a large amount of data
     @ManyToOne(fetch = FetchType.LAZY,cascade = {
             CascadeType.DETACH,
             CascadeType.MERGE,
@@ -32,6 +34,12 @@ public class Recipe {
 
     public Recipe(Dessert dessert, String title, String body, String ingredients) {
         this.dessert = dessert;
+        this.title = title;
+        this.body = body;
+        this.ingredients = ingredients;
+    }
+
+    public Recipe(String title, String body, String ingredients) {
         this.title = title;
         this.body = body;
         this.ingredients = ingredients;
@@ -85,7 +93,7 @@ public class Recipe {
                 "\nDessertID: "+getDessert().getDessertID()+
                 "\nTitle: "+getTitle()+
                 "\nBody: "+getBody()+
-                "\n Ingredients: "+getIngredients()+
+                "\nIngredients: "+getIngredients()+
                 "\n}";
         return output;
     }
