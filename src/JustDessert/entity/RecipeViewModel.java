@@ -1,48 +1,33 @@
-package Hibernate.entity;
+package JustDessert.entity;
 
 import javax.persistence.*;
+import java.util.Arrays;
+import java.util.List;
 
-@Entity(name = "recipes")
-public class Recipe {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "recipeid")
+public class RecipeViewModel {
     private int recipeID;
-    //Cascade Does Not include Delete Because If a Recipe is removed, the Dessert should remain
-    //Eager OK because it allows Recipe to access Dessert Data and it is not a large amount of data
-    @ManyToOne(fetch = FetchType.LAZY,cascade = {
-            CascadeType.DETACH,
-            CascadeType.MERGE,
-            CascadeType.PERSIST,
-            CascadeType.REFRESH
-    })
-    @JoinColumn(name = "dessertid")
-    //@Column(name = "dessertid")
-    private Dessert dessert;
-    @Column(name = "title")
-    private String title;
-    @Column(name = "body")
-    private String body;
-    @Column(name = "ingredients")
-    private String ingredients;
 
-    public Recipe()
+    private Dessert dessert;
+    private String title;
+    private String body;
+    private List<String> ingredients;
+
+    public RecipeViewModel()
     {
 
     }
 
-    public Recipe(Dessert dessert, String title, String body, String ingredients) {
+    public RecipeViewModel(Dessert dessert, String title, String body, String ingredients) {
         this.dessert = dessert;
         this.title = title;
         this.body = body;
-        this.ingredients = ingredients;
+        this.ingredients = Arrays.asList(ingredients.split(","));
     }
 
-    public Recipe(String title, String body, String ingredients) {
+    public RecipeViewModel(String title, String body, String ingredients) {
         this.title = title;
         this.body = body;
-        this.ingredients = ingredients;
+        this.ingredients = Arrays.asList(ingredients.split(","));
     }
 
     public int getRecipeID() {
@@ -77,19 +62,37 @@ public class Recipe {
         this.body = body;
     }
 
-    public String getIngredients() {
+    public List<String> getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(String ingredients) {
+    public void setIngredients(List<String> ingredients) {
         this.ingredients = ingredients;
+    }
+
+    public String getIngredientsString() {
+        return String.join(",",ingredients);
+    }
+
+    public void addIngredient(String s)
+    {
+        ingredients.add(s);
+    }
+
+    public void removeIngredient(String s)
+    {
+        ingredients.remove(s);
+    }
+
+    public void setIngredients(String ingredients) {
+        this.ingredients = Arrays.asList(ingredients.split(","));
     }
 
     @Override
     public String toString()
     {
         String output;
-        output = "Recipe:{\nRecipeID: "+getRecipeID() +
+        output = "RecipeViewModel:{\nRecipeID: "+getRecipeID() +
                 "\nDessertID: "+getDessert().getDessertID()+
                 "\nTitle: "+getTitle()+
                 "\nBody: "+getBody()+

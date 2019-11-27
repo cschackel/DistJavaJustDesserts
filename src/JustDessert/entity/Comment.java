@@ -1,8 +1,11 @@
-package Hibernate.entity;
+package JustDessert.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
-@Entity(name = "comments")
+@Entity
+@Table(name = "comments")
 public class Comment {
 
     @Id
@@ -17,15 +20,24 @@ public class Comment {
             CascadeType.PERSIST,
             CascadeType.REFRESH
     })
+    @NotNull
     @JoinColumn(name = "dessertid")
     //@Column(name = "dessertid")
      private Dessert dessert;
+    @NotNull
     @Column(name = "postedby")
+    @Size(min = 1, max = 50, message = "1-50 characters")
      private  String postedBy;
+    @NotNull
     @Column(name = "title")
+    @Size(min = 1, max = 50, message = "1-50 characters")
+
     private String title;
+    @NotNull
     @Column(name = "body")
-     private String body;
+    @Size(min = 1, max = 1000, message = "1-1000 characters")
+
+    private String body;
 
 
     public Comment()

@@ -1,14 +1,13 @@
 package Hibernate;
 
-import Hibernate.entity.Category;
-import Hibernate.entity.Comment;
-import Hibernate.entity.Dessert;
-import Hibernate.entity.Recipe;
+import JustDessert.entity.Category;
+import JustDessert.entity.Comment;
+import JustDessert.entity.Dessert;
+import JustDessert.entity.Recipe;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 public class HibernateApp {

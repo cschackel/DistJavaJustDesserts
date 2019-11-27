@@ -1,16 +1,23 @@
-package Hibernate.entity;
+package JustDessert.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.LinkedList;
 import java.util.List;
 
-@Entity(name = "desserts")
+@Entity
+@Table(name = "desserts")
 public class Dessert {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "dessertid")
     private int dessertID;
+    @NotNull
+    @Size(min = 1, max = 50, message = "1-50 characters")
     @Column(name = "dessertname")
     private String dessertName;
     //Cascade Does Not include Delete Because If a dessert is removed, the category should remain
@@ -22,13 +29,21 @@ public class Dessert {
             CascadeType.REFRESH
     })
     @JoinColumn(name = "categoryid")
+    @NotNull
     private Category category;
     @Column(name = "description")
+    @Size(min = 1, max = 500, message = "1-500 characters")
     private String description;
+    @Min(0)
+    @Max(5)
+    @NotNull
     @Column(name = "rating")
     private double rating;
+    @Size(min = 1, max = 500, message = "1-500 characters")
+    @NotNull
     @Column(name = "discerningfeatures")
     private String discerningFeatures;
+    @Size(min = 1, max = 50, message = "1-50 characters")
     @Column(name = "imagename")
     private String imageName;
 

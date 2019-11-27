@@ -1,19 +1,25 @@
-package Hibernate.entity;
+package JustDessert.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.LinkedList;
 import java.util.List;
 
-@Entity(name = "Categories")
+@Entity
+@Table(name = "Categories")
 public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "categoryid")
     private int categoryID;
+    @NotNull
+    @Size(min = 1, max = 50, message = "1-50 characters")
     @Column(name = "categoryname")
     private String categoryName;
     @Column(name = "imagename")
+    @Size(min = 1, max = 50, message = "1-50 characters")
     private String imageName;
     //ALL Because if Category Is Deleted, all Desserts of that Category should be deleted
     //Default Lazy Loading OK because it is efficient and it is not always necessary to know desserts
