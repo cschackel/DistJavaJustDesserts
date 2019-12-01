@@ -18,6 +18,10 @@
 <div id="wrapper">
     <%@ include file="/WEB-INF/view/includes/header.jsp" %>
 
+    <form:form action="${pageContext.request.contextPath}/dessert/add" method="get">
+        <input type="submit" value="Add Dessert">
+    </form:form>
+
     <div class="list-specifier">
     <h1>${category.categoryName}</h1>
 </div>

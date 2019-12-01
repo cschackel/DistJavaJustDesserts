@@ -48,7 +48,27 @@ public class DessertDAO implements IDessertDAO {
         if(desserts!=null&&desserts.size()>0)
         {
             dessert =desserts.get(0);
+        } else
+        {
+            q = session.createQuery("from Dessert d where (d.dessertID = :id)",Dessert.class);
+            desserts = q.setParameter("id",id).getResultList();
+            if(desserts!=null&&desserts.size()>0)
+            {
+                dessert =desserts.get(0);
+                dessert.getCommentList().size();
+            }
         }
         return dessert;
+    }
+
+    @Override
+    public Collection<Dessert> getDessertsByName(String s) {
+        Session session = sessionFactory.getCurrentSession();
+        List<Dessert> desserts;
+        Query q = session.createQuery("from Dessert d where lower(d.dessertName) like :searchTerm");
+        String theSearchTerm = "%" + s.toLowerCase() + "%";
+        q.setParameter("searchTerm",theSearchTerm);
+        desserts = q.getResultList();
+        return desserts;
     }
 }

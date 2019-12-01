@@ -12,4 +12,6 @@ public interface IDessertDAO {
     Dessert getDessertByID(int ID);
 
     Dessert getDessertByIDEager(int id);
+
+    Collection<Dessert> getDessertsByName(String s);
 }

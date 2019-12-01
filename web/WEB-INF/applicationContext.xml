@@ -67,6 +67,7 @@
             <bean class="JustDessert.Service.Converter.RecipeToRecipeViewModelConverter"></bean>
             <bean class="JustDessert.Service.Converter.RecipeViewModelToRecipeConverter"></bean>
             <bean class="JustDessert.Service.Converter.StringToDessertConverter"></bean>
+            <bean class="JustDessert.Service.Converter.StringToCategoryConverter"></bean>
         </list>
     </property>
 </bean>

@@ -22,7 +22,7 @@
 
     <div class="item-grid">
     <div class="item-grid-img-main"><img src="<spring:url value="/resources/img/${dessert.imageName}"/>"></div>
-    <div class="item-grid-title"><h1 class="item-grid-field-header">Name: ${dessert.dessertName}</h1></div>
+    <div class="item-grid-title"><h1 class="item-grid-field-header" onclick="console.log(''+'${dessert.dessertName}')">Name: ${dessert.dessertName}</h1></div>
     <div class="item-grid-rating"><h2 class="item-grid-field-header">Discerning Feature: ${dessert.discerningFeatures}</h2></div>
     <div class="item-grid-rating"><h2 class="item-grid-field-header">Rating: ${dessert.rating}</h2></div>
     <div class="item-grid-desc"><h2 class="item-grid-field-header">Description:</h2><p>${dessert.description}</p></div>
