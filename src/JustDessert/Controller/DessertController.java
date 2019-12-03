@@ -126,4 +126,20 @@ public class DessertController {
 
         return "redirect:/";
     }
+
+    @RequestMapping("/edit/{dessertID}")
+    public String editDessert(@PathVariable int dessertID, Model model)
+    {
+        model.addAttribute("categories",categoryService.getCategories());
+        Dessert editDessert = dessertService.getDessertByID(dessertID);
+        model.addAttribute("newDessert", editDessert);
+        return "dessert/newDessertForm";
+    }
+
+    @RequestMapping("/delete/{dessertID}")
+    public String deleteDessert(@PathVariable int dessertID)
+    {
+        dessertService.deleteDessertByID(dessertID);
+        return "home/index";
+    }
 }

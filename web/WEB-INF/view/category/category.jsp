@@ -32,6 +32,7 @@
             <a href="${pageContext.request.contextPath}/dessert/${dessert.dessertID}">
                 <img class="menu-tile-img" src="<spring:url value="/resources/img/${dessert.imageName}"/>">
                 <p>${dessert.dessertName}</p>
+                <p><a href="${pageContext.request.contextPath}/dessert/delete/${dessert.dessertID}">Delete</a> | <a href="${pageContext.request.contextPath}/dessert/edit/${dessert.dessertID}">Edit</a></p>
             </a>
         </div>
     </c:forEach>

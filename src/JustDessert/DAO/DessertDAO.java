@@ -28,7 +28,7 @@ public class DessertDAO implements IDessertDAO {
     @Override
     public void addDessert(Dessert newDessert) {
         Session session = sessionFactory.getCurrentSession();
-        session.save(newDessert);
+        session.saveOrUpdate(newDessert);
     }
 
     @Override
@@ -70,5 +70,18 @@ public class DessertDAO implements IDessertDAO {
         q.setParameter("searchTerm",theSearchTerm);
         desserts = q.getResultList();
         return desserts;
+    }
+
+    @Override
+    public void deleteDessertByID(int ID) {
+        Session session = sessionFactory.getCurrentSession();
+
+        // Delete object using primary key
+        Query query = session.createQuery("delete from Dessert d where d.dessertID  = :ID");
+        // Set parameter value
+        query.setParameter("ID", ID);
+
+        // Perform the delete
+        query.executeUpdate();
     }
 }

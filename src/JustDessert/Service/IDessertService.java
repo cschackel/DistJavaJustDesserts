@@ -15,4 +15,6 @@ public interface IDessertService {
     Dessert getDessertByIDEager(int ID);
 
     Collection<Dessert> getDessertsByName(String s);
+
+    void deleteDessertByID(int ID);
 }

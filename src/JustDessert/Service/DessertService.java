@@ -27,24 +27,36 @@ public class DessertService implements IDessertService {
     @Transactional
     @Override
     public void addDessert(Dessert newDessert, MultipartFile file, String applicationPath) {
-        if(file==null)
+        if(file==null&&newDessert.getImageName()==null)
         {
             newDessert.setImageName(newDessert.getCategory().getImageName());
         }
-        else
+        else if(file!=null&&!file.isEmpty())
         {
             String filename = imageFileService.saveFile(
                     file,
                     applicationPath);
-
             if (filename != null) {
                 newDessert.setImageName(filename);
+            }
+        }
+        /*
+        {
+            if(file!=null&&!file.isEmpty())
+            {
+                String filename = imageFileService.saveFile(
+                        file,
+                        applicationPath);
+                if (filename != null) {
+                    newDessert.setImageName(filename);
+                }
             }
             else
             {
                 newDessert.setImageName(newDessert.getCategory().getImageName());
             }
         }
+         */
         dessertDAO.addDessert(newDessert);
     }
 
@@ -64,5 +76,11 @@ public class DessertService implements IDessertService {
     @Transactional
     public Collection<Dessert> getDessertsByName(String s) {
         return dessertDAO.getDessertsByName(s);
+    }
+
+    @Transactional
+    @Override
+    public void deleteDessertByID(int ID) {
+        dessertDAO.deleteDessertByID(ID);
     }
 }

@@ -14,4 +14,6 @@ public interface IDessertDAO {
     Dessert getDessertByIDEager(int id);
 
     Collection<Dessert> getDessertsByName(String s);
+
+    void deleteDessertByID(int ID);
 }
