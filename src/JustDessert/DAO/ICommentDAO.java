@@ -10,4 +10,6 @@ public interface ICommentDAO {
     void saveComment(Comment newComment);
 
     Comment getCommentByID(int ID);
+
+    void DeleteCommentByID(int ID);
 }

@@ -16,5 +16,7 @@ public interface ICategoryService {
 
     Category getCategoryByIDEager(int ID);
 
+    void DeleteCategoryByID(int ID);
+
 
 }

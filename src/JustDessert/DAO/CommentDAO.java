@@ -6,6 +6,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.Query;
 import java.util.Collection;
 
 @Repository
@@ -26,7 +27,7 @@ public class CommentDAO implements ICommentDAO {
     @Override
     public void saveComment(Comment newComment) {
         Session session = sessionFactory.getCurrentSession();
-        session.save(newComment);
+        session.saveOrUpdate(newComment);
     }
 
     @Override
@@ -35,5 +36,15 @@ public class CommentDAO implements ICommentDAO {
         Comment targetComment;
         targetComment = session.get(Comment.class,ID);
         return targetComment;
+    }
+
+    @Override
+    public void DeleteCommentByID(int ID) {
+        Session session = sessionFactory.getCurrentSession();
+
+        Query query = session.createQuery("delete from Comment c where c.commentID  = :ID");
+        query.setParameter("ID", ID);
+
+        query.executeUpdate();
     }
 }

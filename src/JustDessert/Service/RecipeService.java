@@ -37,4 +37,10 @@ public class RecipeService implements IRecipeService {
     public Collection<Recipe> getRecipesByDessertID(int dessertID) {
         return recipeDAO.getRecipesByDessertID(dessertID);
     }
+
+    @Transactional
+    @Override
+    public void DeleteRecipeByID(int ID) {
+        recipeDAO.DeleteRecipeByID(ID);
+    }
 }

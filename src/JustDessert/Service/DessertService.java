@@ -40,23 +40,6 @@ public class DessertService implements IDessertService {
                 newDessert.setImageName(filename);
             }
         }
-        /*
-        {
-            if(file!=null&&!file.isEmpty())
-            {
-                String filename = imageFileService.saveFile(
-                        file,
-                        applicationPath);
-                if (filename != null) {
-                    newDessert.setImageName(filename);
-                }
-            }
-            else
-            {
-                newDessert.setImageName(newDessert.getCategory().getImageName());
-            }
-        }
-         */
         dessertDAO.addDessert(newDessert);
     }
 

@@ -43,7 +43,7 @@ public class CategoryDAO implements ICategoryDAO {
     public void addCategory(Category newCategory) {
         Session session = sessionFactory.getCurrentSession();
 
-        session.save(newCategory);
+        session.saveOrUpdate(newCategory);
     }
 
     @Override
@@ -65,5 +65,15 @@ public class CategoryDAO implements ICategoryDAO {
             category = categories.get(0);
         }
         return category;
+    }
+
+    @Override
+    public void DeleteCategoryByID(int ID) {
+        Session session = sessionFactory.getCurrentSession();
+
+        Query query = session.createQuery("delete from Category c where c.categoryID  = :ID");
+        query.setParameter("ID", ID);
+
+        query.executeUpdate();
     }
 }

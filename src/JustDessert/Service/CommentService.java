@@ -29,4 +29,10 @@ public class CommentService implements ICommentService {
     public Comment getCommentByID(int ID) {
         return commentDAO.getCommentByID(ID);
     }
+
+    @Transactional
+    @Override
+    public void DeleteCommentByID(int ID) {
+        commentDAO.DeleteCommentByID(ID);
+    }
 }

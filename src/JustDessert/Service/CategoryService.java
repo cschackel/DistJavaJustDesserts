@@ -20,6 +20,7 @@ public class CategoryService implements ICategoryService {
         return categoryDAO.getCategories();
     }
 
+    @Transactional
     @Override
     public Collection<Category> getCategoriesEager() {
         return  categoryDAO.getCategoriesEager();
@@ -41,5 +42,11 @@ public class CategoryService implements ICategoryService {
     @Override
     public Category getCategoryByIDEager(int ID) {
         return categoryDAO.getCategoryByIDEager(ID);
+    }
+
+    @Transactional
+    @Override
+    public void DeleteCategoryByID(int ID) {
+        categoryDAO.DeleteCategoryByID(ID);
     }
 }

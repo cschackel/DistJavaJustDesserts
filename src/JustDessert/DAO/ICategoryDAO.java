@@ -13,5 +13,7 @@ public interface ICategoryDAO {
 
     Category getCategoryByID(int ID);
 
-    Category getCategoryByIDEager(int id);
+    Category getCategoryByIDEager(int ID);
+
+    void DeleteCategoryByID(int ID);
 }

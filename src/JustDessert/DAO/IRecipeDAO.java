@@ -12,4 +12,6 @@ public interface IRecipeDAO {
     Recipe getRecipeByID(int ID);
 
     Collection<Recipe> getRecipesByDessertID(int dessertID);
+
+    void DeleteRecipeByID(int ID);
 }

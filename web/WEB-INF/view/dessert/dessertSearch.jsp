@@ -18,6 +18,7 @@
 <body>
 <div id="wrapper">
     <%@ include file="/WEB-INF/view/includes/header.jsp" %>
+    <c:if test="${desserts.size() gt 0}">
     <ul>
     <c:forEach var="dessert" items="${desserts}">
         <li><a href="${pageContext.request.contextPath}/dessert/${dessert.dessertID}">
@@ -26,6 +27,10 @@
 
     </c:forEach>
     </ul>
+    </c:if>
+    <c:if test="${desserts == null or desserts.size() == 0}">
+        <p>No Matching Desserts Found</p>
+    </c:if>
     <%@ include file="/WEB-INF/view/includes/footer.jsp" %>
 </div>
 </body>

@@ -28,7 +28,7 @@ public class RecipeDAO implements IRecipeDAO {
     public void saveRecipe(Recipe newRecipe) {
         Session session = sessionFactory.getCurrentSession();
 
-        session.save(newRecipe);
+        session.saveOrUpdate(newRecipe);
     }
 
     @Override
@@ -52,5 +52,15 @@ public class RecipeDAO implements IRecipeDAO {
         recipes = query.getResultList();
 
         return recipes;
+    }
+
+    @Override
+    public void DeleteRecipeByID(int ID) {
+        Session session = sessionFactory.getCurrentSession();
+
+        Query query = session.createQuery("delete from Recipe  r where r.recipeID  = :ID");
+        query.setParameter("ID", ID);
+
+        query.executeUpdate();
     }
 }

@@ -11,5 +11,5 @@ public interface ICommentService {
 
     Comment getCommentByID(int ID);
 
-
+    void DeleteCommentByID(int ID);
 }

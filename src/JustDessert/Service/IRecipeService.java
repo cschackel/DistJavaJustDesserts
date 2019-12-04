@@ -12,4 +12,6 @@ public interface IRecipeService {
     Recipe getRecipeByID(int ID);
 
     Collection<Recipe> getRecipesByDessertID(int dessertID);
+
+    void DeleteRecipeByID(int ID);
 }
